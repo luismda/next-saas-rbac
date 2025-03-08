@@ -1,4 +1,10 @@
 {
   "extends": "@saas/typescript-config/node",
-  "include": ["src/**/*"]
+  "include": ["src/**/*", "@types/*.d.ts"],
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  }
 }
