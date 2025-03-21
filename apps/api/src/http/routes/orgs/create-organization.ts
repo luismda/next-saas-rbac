@@ -20,7 +20,7 @@ export async function createOrganization(app: FastifyInstance) {
           summary: 'Create a new organization',
           security: [{ bearerAuth: [] }],
           body: z.object({
-            name: z.string(),
+            name: z.string().trim().min(1),
             domain: z.string().trim().min(1).nullish(),
             shouldAttachUsersByDomain: z.boolean().optional(),
           }),
