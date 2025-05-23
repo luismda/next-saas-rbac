@@ -32,7 +32,9 @@ export function useFormState(
 
       setFormState(state)
 
-      await onSuccess?.()
+      if (state.success) {
+        await onSuccess?.()
+      }
     })
   }
 
